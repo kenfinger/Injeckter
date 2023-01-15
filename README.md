@@ -56,6 +56,7 @@ nc -nvlp <PORT>
 FOR ALL PAYLOADS:
 
 python3 -m http.server <PORT>
+  
 Enter payload URL in Injeckter text box, select or enter process, and click "Run".  
 
 
